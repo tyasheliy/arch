@@ -1,0 +1,16 @@
+{
+    "rules": [
+        {
+            "domain_suffix": [
+                ".ru",
+                "reddit.com",
+                "twitch.tv",
+                "nixos.wiki",
+				        "vk.com",
+                "ttvnw.net"
+            ],
+            "outbound": "direct"
+        }
+    ]
+}
+
