@@ -27,8 +27,6 @@ replaceDefaultUser() {
 	sed -i "s/tyasheliy/${USER}/g" $1
 }
 
-#git clone https://github.com/tyasheliy/xubuntu $HOME/os
-
 cfgDir=$(realpath $HOME/os)
 export SCRIPT_DIR="${cfgDir}/scripts"
 

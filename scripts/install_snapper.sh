@@ -44,6 +44,6 @@ sudo umount /mnt
 sudo mkdir /.snapshots
 sudo mount -o subvol=/@.snapshots /dev/mapper/root /.snapshots
 sudo snapper -c root create --description init
-sudo genfstab / > /etc/fstab
+sudo sh -c "genfstab / > /etc/fstab"
 
 sudo pacman -S --noconfirm snap-pac
