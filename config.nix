@@ -17,11 +17,7 @@ in {
 	inherit scriptDir;
 
 	systemInstall = pkg: lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-		run /usr/bin/sudo /usr/bin/apt install -y ${pkg}
-	'';
-
-	snapInstall = pkg: lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-		run /usr/bin/sudo /usr/bin/snap install -y ${pkg}
+		run /usr/bin/sudo /usr/bin/pacman -S --noconfirm ${pkg}
 	'';
 
 	inherit rnAlias;

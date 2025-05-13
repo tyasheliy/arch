@@ -15,10 +15,6 @@ if [[ -z "${HOME}" ]]; then
 	exit 1
 fi
 
-installIfNotFound() {
-	command -v $1 >/dev/null 2>&1 || sudo apt install -y $1
-}
-
 rn() {
 	bash $cfgDir/rn.sh $1
 }
@@ -31,8 +27,7 @@ replaceDefaultUser() {
 	sed -i "s/tyasheliy/${USER}/g" $1
 }
 
-installIfNotFound git
-git clone https://github.com/tyasheliy/xubuntu $HOME/os
+#git clone https://github.com/tyasheliy/xubuntu $HOME/os
 
 cfgDir=$(realpath $HOME/os)
 export SCRIPT_DIR="${cfgDir}/scripts"
