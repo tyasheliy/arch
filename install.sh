@@ -27,6 +27,15 @@ replaceDefaultUser() {
 	sed -i "s/tyasheliy/${USER}/g" $1
 }
 
+sh <(curl -L https://nixos.org/nix/install) --no-daemon --yes
+
+nixsh=$HOME/.nix-profile/etc/profile.d/nix.sh
+source $nixsh
+
+if [[ ! -d $HOME/os ]]; then
+	git clone https://github.com/tyasheliy/arch $HOME/os
+fi
+
 cfgDir=$(realpath $HOME/os)
 export SCRIPT_DIR="${cfgDir}/scripts"
 

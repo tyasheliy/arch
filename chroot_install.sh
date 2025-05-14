@@ -1,19 +1,33 @@
 #!/bin/bash
 
-if [[ -z $TARGET_USER ]]; then
-	echo "No target user specified. Put target username in TARGET_USER."
-	exit 1
-fi
-
 pacman -S --noconfirm vim networkmanager git firefox pacman-contrib
 systemctl enable NetworkManager.service
+
+if [[ -z $TARGET_USER ]]; then
+	echo "No target username provided. Exiting."
+	exit 0
+fi
+
+if [[ -z $TARGET_USER_HOME ]]; then
+	TARGET_USER_HOME=/home/$TARGET_USER
+	echo "No custom user home provided. Using ${TARGET_USER_HOME}"
+fi
+
+mkdir /nix
+chown -R $TARGET_USER /nix
+
+osDir=$TARGET_USER_HOME/os
+
+if [[ ! -d $osDir ]]; then
+	git clone https://github.com/tyasheliy/arch $osDir
+	chown $TARGET_USER $osDir
+fi
 
 sudoersFilename="install_nix_for_${TARGET_USER}"
 sudoersFileAbs=/etc/sudoers.d/$sudoersFilename
 echo "${TARGET_USER} ALL=(ALL:ALL) NOPASSWD: ALL" >> $sudoersFileAbs
 
-su $TARGET_USER -c "sh <(curl -L https://nixos.org/nix/install) --daemon --yes"
-su $TARGET_USER -c "git clone https://github.com/tyasheliy/arch ~/os"
-su $TARGET_USER -c "bash ~/os/install.sh"
+su $TARGET_USER -c "bash ${osDir}/install.sh"
 
 rm -f $sudoersFileAbs
+
