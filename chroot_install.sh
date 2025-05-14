@@ -20,14 +20,15 @@ osDir=$TARGET_USER_HOME/os
 
 if [[ ! -d $osDir ]]; then
 	git clone https://github.com/tyasheliy/arch $osDir
-	chown $TARGET_USER $osDir
+	chown -R $TARGET_USER $osDir
 fi
 
-sudoersFilename="install_nix_for_${TARGET_USER}"
-sudoersFileAbs=/etc/sudoers.d/$sudoersFilename
-echo "${TARGET_USER} ALL=(ALL:ALL) NOPASSWD: ALL" >> $sudoersFileAbs
+sudoersStr="${TARGET_USER} ALL=(ALL:ALL) NOPASSWD: ALL" 
+echo $sudoersStr >> /etc/sudoers
 
 su $TARGET_USER -c "bash ${osDir}/install.sh"
 
-rm -f $sudoersFileAbs
+sed -i "s/${sudoersStr}//g" /etc/sudoers
+
+chsh -s $(which zsh) $TARGET_USER
 
