@@ -1,3 +1,4 @@
 #!/bin/bash
-sudo pacman -S --noconfirm cronie
+
+systemInstallNew cronie
 sudo systemctl enable --now cronie.service

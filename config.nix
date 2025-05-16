@@ -17,13 +17,18 @@ in {
 	inherit scriptDir;
 
 	systemInstall = pkg: lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-		run /usr/bin/sudo /usr/bin/pacman -S --noconfirm ${pkg}
+		export PATH=$PATH:/usr/bin
+
+		if [[ -z $(pacman -Q | grep "${pkg}") ]]; then
+			sudo pacman -S --noconfirm ${pkg}
+		fi
 	'';
 
 	inherit rnAlias;
 
 	rnScript = script: lib.hm.dag.entryAfter [ "writeBoundary" "installPackages" ] ''
 		export PATH=$PATH:/usr/bin
+
 		${rnAlias} ${script}
 	'';
 

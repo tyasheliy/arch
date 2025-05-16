@@ -2,8 +2,10 @@
 
 # This script provides fzf interface for executing bash scripts in ./scripts dir.
 
+. $(dirname $0)/functions.sh
+
 execute () {
-	cd $SCRIPT_DIR && bash $1
+	cd $SCRIPT_DIR && . $1
 	exit 0
 }
 

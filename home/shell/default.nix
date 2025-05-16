@@ -13,6 +13,11 @@
       set +o allexport
       export PATH="$PATH:${userConfig.homeDir}/.config/composer/vendor/bin"
     '';
+	profileExtra = ''
+		if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
+			exec startx
+		fi
+	'';
   };
 
   home.activation.installZsh = userConfig.systemInstall "zsh";
@@ -23,7 +28,7 @@
       sail = "sudo ./vendor/bin/sail";
       lzd = "sudo $(which lazydocker)";
       hsw =
-        "export NIXPKGS_ALLOW_UNFREE=1 && home-manager switch --flake ${userConfig.cfgDir}";
+        "sudo echo 'Using sudo!' && export NIXPKGS_ALLOW_UNFREE=1 && home-manager switch --flake ${userConfig.cfgDir}";
       rn = userConfig.rnAlias;
       dsr1 = "ollama run deepseek-r1:8b";
       ds = "ollama run deepseek-coder-v2:16b";
