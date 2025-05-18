@@ -24,6 +24,11 @@ in {
 			lazygit
 			fzf
 		];
+
+		activation = {
+			installTldr = userConfig.systemInstall "tldr";
+			installBluetooth = userConfig.rnScript "install_bluetooth.sh";
+		};
 	};
 
 	targets.genericLinux.enable = true; # non-nixos support.

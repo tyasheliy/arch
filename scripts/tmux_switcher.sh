@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [[ $# -eq 1 ]]; then
-    selected=$1
+if [[ $# -eq 2 ]]; then
+    selected=$2
 else
     selected=$(find ~/projects -mindepth 1 -maxdepth 1 -type d | fzf)
 fi

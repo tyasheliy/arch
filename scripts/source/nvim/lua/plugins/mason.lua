@@ -58,6 +58,7 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 					{ name = "buffer" },
+					{ name = "orgmode" },
 					per_filetype = {
 						codecompanion = { "codecompanion" },
 					},
