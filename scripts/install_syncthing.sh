@@ -1,4 +1,4 @@
 #!/bin/bash
 
 systemInstallNew syncthing
-systemctl --user enable --now syncthing.service
+sudo systemctl enable --now syncthing@$(whoami).service

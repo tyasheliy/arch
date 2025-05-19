@@ -15,7 +15,7 @@
     <property name="FallbackIconTheme" type="empty"/>
   </property>
   <property name="Xft" type="empty">
-    <property name="DPI" type="int" value="130"/>
+    <property name="DPI" type="int" value="145"/>
     <property name="Antialias" type="int" value="1"/>
     <property name="Hinting" type="empty"/>
     <property name="HintStyle" type="empty"/>
@@ -45,6 +45,6 @@
   </property>
   <property name="Xfce" type="empty">
     <property name="SyncThemes" type="empty"/>
-    <property name="LastCustomDPI" type="int" value="130"/>
+    <property name="LastCustomDPI" type="int" value="145"/>
   </property>
 </channel>
