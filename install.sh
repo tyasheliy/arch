@@ -44,3 +44,4 @@ replaceDefaultUser $cfgDir/flake.nix
 replaceDefaultUser $cfgDir/config.nix
 rn install_home-manager.sh
 hsw
+rn rank_mirrors.sh

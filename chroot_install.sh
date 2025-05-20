@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pacman -S --noconfirm vim networkmanager git firefox pacman-contrib
+pacman -S --noconfirm vim networkmanager git
 systemctl enable NetworkManager.service
 
 if [[ -z $TARGET_USER ]]; then
@@ -31,4 +31,3 @@ su $TARGET_USER -c "bash ${osDir}/install.sh"
 sed -i "s/${sudoersStr}//g" /etc/sudoers
 
 chsh -s $(which zsh) $TARGET_USER
-
