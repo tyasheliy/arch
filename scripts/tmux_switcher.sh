@@ -3,7 +3,9 @@
 if [[ $# -eq 2 ]]; then
     selected=$2
 else
-    selected=$(find ~/projects -mindepth 1 -maxdepth 1 -type d | fzf)
+    projects=$(find ~/projects -mindepth 1 -maxdepth 1 -type d)
+	added="$HOME/os\n$HOME/org"
+	selected=$(echo -e "${projects}\n${added}" | fzf)
 fi
 
 if [[ -z $selected ]]; then

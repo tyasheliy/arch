@@ -27,11 +27,10 @@
       docker = "sudo -E docker";
       sail = "sudo ./vendor/bin/sail";
       lzd = "sudo $(which lazydocker)";
+	  vi = "nvim";
       hsw =
         "sudo echo 'Using sudo!' && export NIXPKGS_ALLOW_UNFREE=1 && home-manager switch --flake ${userConfig.cfgDir}";
       rn = userConfig.rnAlias;
-      dsr1 = "ollama run deepseek-r1:8b";
-      ds = "ollama run deepseek-coder-v2:16b";
     };
 
     sessionVariables = { EDITOR = "nvim"; };
