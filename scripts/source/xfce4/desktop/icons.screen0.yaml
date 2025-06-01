@@ -11,7 +11,10 @@ configs:
       y: 0
       width: 1920
       height: 1080
-  icons: {}
+  icons:
+    "/home/tyasheliy/Desktop/Battle.net.desktop":
+      row: 0
+      col: 0
 - level: 0
   monitors:
   - id: "ae1d237207c6fa8276092b6fb0915d8ceb5e29a5"
@@ -28,7 +31,10 @@ configs:
       y: 0
       width: 1920
       height: 1080
-  icons: {}
+  icons:
+    "/home/tyasheliy/Desktop/steam.desktop":
+      row: 0
+      col: 0
 - level: 0
   monitors:
   - id: "0f5a8989fa3de9190ce928779f448be095d82a63"
