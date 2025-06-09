@@ -1,3 +1,5 @@
+vim.opt.number = true
+
 vim.opt.ignorecase = true
 vim.opt.showmatch = true
 
