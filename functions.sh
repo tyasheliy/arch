@@ -7,7 +7,8 @@ systemInstall() {
 systemInstallNew() {
 	for pkg in "$@"
 	do
-		if [[ -z $(pacman -Q | grep "$pkg") ]]; then
+		pacman -Qi "${pkg}" > /dev/null
+		if [[ $? -eq 1 ]]; then
 			systemInstall $pkg
 		fi
 	done
