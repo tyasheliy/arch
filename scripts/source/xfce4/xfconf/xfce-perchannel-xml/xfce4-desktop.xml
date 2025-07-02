@@ -125,8 +125,8 @@
         </property>
         <property name="workspace5" type="empty">
           <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="1"/>
-          <property name="last-image" type="string" value="/home/tyasheliy/os/scripts/source/wallpapers/replica.jpg"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/tyasheliy/os/scripts/source/wallpapers/trees-river-fog-forest-4k_1540133998.jpg"/>
           <property name="rgba1" type="array">
             <value type="double" value="0"/>
             <value type="double" value="0"/>
