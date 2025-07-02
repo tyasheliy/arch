@@ -5,7 +5,6 @@ return {
 
 		notify.setup({
 			stages = "static",
-			top_down = false,
 			max_width = 60,
 		})
 

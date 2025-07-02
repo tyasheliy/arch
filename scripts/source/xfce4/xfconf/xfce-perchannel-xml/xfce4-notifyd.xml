@@ -2,9 +2,9 @@
 
 <channel name="xfce4-notifyd" version="1.0">
   <property name="notify-location" type="string" value="top-right"/>
-  <property name="theme" type="empty"/>
+  <property name="theme" type="string" value="Default"/>
   <property name="initial-opacity" type="empty"/>
-  <property name="do-fadeout" type="empty"/>
+  <property name="do-fadeout" type="bool" value="true"/>
   <property name="log-max-size-enabled" type="bool" value="true"/>
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
@@ -21,6 +21,7 @@
       <value type="string" value="Strawberry"/>
       <value type="string" value="thunar-volman"/>
       <value type="string" value="Xfce volume control"/>
+      <value type="string" value="Xfce4-notifyd settings"/>
       <value type="string" value="xfce4-power-manager"/>
       <value type="string" value="xfce4-settings-helper"/>
     </property>
@@ -29,4 +30,6 @@
     <property name="show-in-menu" type="string" value="show-all"/>
   </property>
   <property name="do-not-disturb" type="bool" value="false"/>
+  <property name="date-time-custom-format" type="string" value="%a %H:%M:%S"/>
+  <property name="do-slideout" type="bool" value="false"/>
 </channel>

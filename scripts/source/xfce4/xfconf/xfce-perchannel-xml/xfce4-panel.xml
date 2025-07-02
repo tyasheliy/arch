@@ -14,7 +14,7 @@
         <value type="int" value="9"/>
         <value type="int" value="8"/>
       </property>
-      <property name="background-style" type="uint" value="1"/>
+      <property name="background-style" type="uint" value="0"/>
       <property name="size" type="uint" value="28"/>
       <property name="length-adjust" type="bool" value="true"/>
       <property name="span-monitors" type="bool" value="false"/>
