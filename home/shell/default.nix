@@ -11,7 +11,14 @@
       set -o allexport
       source ${userConfig.homeDir}/.env || touch ${userConfig.homeDir}/.env
       set +o allexport
+
       export PATH="$PATH:${userConfig.homeDir}/.config/composer/vendor/bin"
+	  export NIXPKGS_ALLOW_INSECURE=1
+	  export NIXPKGS_ALLOW_UNFREE=1
+
+	  ns() {
+		 nix shell nixpkgs#"$1" --impure
+	  }
     '';
 	profileExtra = ''
 		if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
@@ -25,8 +32,12 @@
   home = {
     shellAliases = {
       docker = "sudo -E docker";
-      sail = "sudo ./vendor/bin/sail";
       lzd = "sudo $(which lazydocker)";
+	  dcu = "docker compose up -d";
+	  dcul = "docker compose up -d && lzd";
+	  dcd = "docker compose down";
+
+      sail = "sudo ./vendor/bin/sail";
 	  vi = "nvim";
       hsw =
         "sudo echo 'Using sudo!' && export NIXPKGS_ALLOW_UNFREE=1 && home-manager switch --flake ${userConfig.cfgDir}";
