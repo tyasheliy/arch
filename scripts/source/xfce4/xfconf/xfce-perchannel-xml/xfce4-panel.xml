@@ -42,6 +42,7 @@
       <property name="symbolic-icons" type="bool" value="true"/>
       <property name="icon-size" type="int" value="0"/>
       <property name="known-items" type="array">
+        <value type="string" value="Throne"/>
         <value type="string" value="steam"/>
         <value type="string" value="nekoray"/>
         <value type="string" value="obs"/>
@@ -55,6 +56,7 @@
       <property name="hidden-items" type="array">
       </property>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="wi-fi network connection “xiaomi_c3e3_5g” active: xiaomi_c3e3_5g (98%)"/>
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="nekobox"/>
