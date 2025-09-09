@@ -42,6 +42,7 @@
       <property name="symbolic-icons" type="bool" value="true"/>
       <property name="icon-size" type="int" value="0"/>
       <property name="known-items" type="array">
+        <value type="string" value="SoulseekQt"/>
         <value type="string" value="Throne"/>
         <value type="string" value="steam"/>
         <value type="string" value="nekoray"/>

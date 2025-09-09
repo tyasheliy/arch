@@ -14,6 +14,10 @@ return {
 				"html",
 				"php",
 				"go",
+				"markdown",
+				"markdown_inline",
+				"yaml",
+				"diff"
 			},
 			sync_install = false,
 			highlight = { enable = true },

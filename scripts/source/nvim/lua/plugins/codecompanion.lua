@@ -6,42 +6,46 @@ return {
 		"hrsh7th/nvim-cmp",
 	},
 	opts = {
+		opts = {
+			log_level = "DEBUG",
+		},
 		strategies = {
 			chat = {
-				adapter = "ds_openrouter",
+				adapter = "ollama_aiserver",
 			},
 			inline = {
-				adapter = "ds_openrouter",
+				adapter = "ollama_aiserver",
+			},
+			agent = {
+				adapter = "ollama_aiserver",
 			},
 		},
 		adapters = {
-			dscode_ollama = function()
-				return require("codecompanion.adapters").extend("ollama", {
-					name = "dscode_ollama",
-					schema = {
-						model = {
-							default = "deepseek-coder-v2:16b",
+			http = {
+				ollama_aiserver = function()
+					return require("codecompanion.adapters").extend("ollama", {
+						name = "ollama_aiserver",
+						env = {
+							url = "http://aiserver:11434",
 						},
-					},
-				})
-			end,
-			ds_openrouter = function()
-				return require("codecompanion.adapters").extend("openai_compatible", {
-					name = "ds_openrouter",
-					env = {
-						api_key = vim.env.OPENROUTER_API_KEY,
-						url = "https://openrouter.ai/api",
-					},
-					features = {
-						vision = true,
-					},
-					schema = {
-						model = {
-							default = "deepseek/deepseek-prover-v2:free",
+						opts = {
+							vision = true,
+							stream = true,
 						},
-					},
-				})
-			end,
+						schema = {
+							model = {
+								default = "qwen3:8b",
+							},
+							think = {
+								default = false,
+							},
+							keep_alive = {
+								default = "5m",
+							},
+						},
+					})
+				end,
+			},
 		},
 	},
 }
