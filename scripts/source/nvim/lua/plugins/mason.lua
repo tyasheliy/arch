@@ -10,15 +10,6 @@ return {
 			"saadparwaiz1/cmp_luasnip",
 		},
 		config = function()
-			require("mason").setup()
-
-			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"intelephense",
-					"gopls",
-				},
-			})
-
 			local on_attach = function(client, bufnr)
 				local function buf_set_keymap(...)
 					vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -37,6 +28,22 @@ return {
 				buf_set_keymap("n", "gi", "<cmd>lua require('telescope.builtin').lsp_implementations()<CR>", opts)
 				buf_set_keymap("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>", opts)
 			end
+
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+			vim.lsp.config("*", {
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+
+			require("mason").setup()
+
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"intelephense",
+					"gopls",
+				},
+			})
 
 			local cmp = require("cmp")
 			cmp.setup({
@@ -63,8 +70,6 @@ return {
 					},
 				},
 			})
-
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		end,
 	},
 }
