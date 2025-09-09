@@ -18,7 +18,7 @@ in {
 		homeDirectory = userConfig.homeDir;
 		stateVersion = userConfig.stateVersion; 
 		packages = with pkgs; [
-			htop
+			btop
 			(nerdfonts.override { fonts = ["JetBrainsMono"]; })
 			lazydocker
 			lazygit
