@@ -35,7 +35,7 @@
       dcd = "docker compose down";
 
       sail = "sudo ./vendor/bin/sail";
-      vi = "nvim";
+      vim = "nvim";
       hsw =
         "sudo echo 'Using sudo!' && export NIXPKGS_ALLOW_UNFREE=1 && home-manager switch --flake ${userConfig.cfgDir}";
       rn = userConfig.rnAlias;
