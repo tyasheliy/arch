@@ -1,6 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, userConfig, ... }: {
   programs.tmux = {
     enable = true;
+	package = pkgs.emptyDirectory;
     baseIndex = 1;
     mouse = true;
     keyMode = "vi";
@@ -9,6 +10,10 @@
       {
         plugin = tmuxPlugins.resurrect;
         extraConfig = ''
+			set-option -sa terminal-features ',alacritty:RGB'
+			set-option -g default-terminal "tmux-256color"
+			set-option -ga terminal-features ",alacritty:usstyle"
+
 			resurrect_dir="$HOME/.tmux/resurrect"
 			set -g @resurrect-dir $resurrect_dir
 
@@ -36,4 +41,6 @@
       }
     ];
   };
+
+  home.activation.installTmux = userConfig.systemInstall "tmux";
 }
