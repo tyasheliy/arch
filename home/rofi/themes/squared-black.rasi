@@ -2,7 +2,7 @@
 /* Author: Newman Sanchez (https://github.com/newmanls) */
 
 * {
-    font:   "JetBrains Mono Nerd Font Medium 12";
+    font:   "Adwaita Sans Regular 13";
 
     bg0:     #000000; /* main bg */
     bg1:     #000000; /* cmd line */

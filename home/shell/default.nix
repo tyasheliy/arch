@@ -8,17 +8,17 @@
     };
     autosuggestion.enable = true;
     initExtra = ''
-            set -o allexport
-            source ${userConfig.homeDir}/.env || touch ${userConfig.homeDir}/.env
-            set +o allexport
+		set -o allexport
+		source ${userConfig.homeDir}/.env || touch ${userConfig.homeDir}/.env
+		set +o allexport
 
-            export PATH="$PATH:${userConfig.homeDir}/.config/composer/vendor/bin"
-      	  export NIXPKGS_ALLOW_INSECURE=1
-      	  export NIXPKGS_ALLOW_UNFREE=1
+		export PATH="$PATH:${userConfig.homeDir}/.config/composer/vendor/bin"
+		  export NIXPKGS_ALLOW_INSECURE=1
+		  export NIXPKGS_ALLOW_UNFREE=1
 
-      	  ns() {
-      		 nix shell nixpkgs#"$1" --impure
-      	  }
+		  ns() {
+			 nix shell nixpkgs#"$1" --impure
+		  }
     '';
     profileExtra =
       "	if [ -z \"$DISPLAY\" ] && [ \"$XDG_VTNR\" -eq 1 ]; then\n		exec startx\n	fi\n";
