@@ -17,6 +17,29 @@ configs:
       col: 0
 - level: 0
   monitors:
+  - id: "81c2094af46bd8bbfb9032bc1f4f62fe0e920eb3"
+    display_name: "Samsung Electric Company SAMSUNG 0x01000E00 (HDMI-2)"
+    geometry:
+      x: 0
+      y: 0
+      width: 3840
+      height: 2160
+  icons: {}
+- level: 0
+  monitors:
+  - id: "0f5a8989fa3de9190ce928779f448be095d82a63"
+    display_name: "AU Optronics 0x106C (eDP-1)"
+    geometry:
+      x: 0
+      y: 0
+      width: 1366
+      height: 768
+  icons:
+    "/home/tyasheliy/Desktop/\u041C\u0430\u0448\u0430.desktop":
+      row: 3
+      col: 6
+- level: 0
+  monitors:
   - id: "ae1d237207c6fa8276092b6fb0915d8ceb5e29a5"
     display_name: "BOE 0x0791 (eDP-1)"
     geometry:
@@ -35,16 +58,3 @@ configs:
     "/home/tyasheliy/Desktop/steam.desktop":
       row: 0
       col: 0
-- level: 0
-  monitors:
-  - id: "0f5a8989fa3de9190ce928779f448be095d82a63"
-    display_name: "AU Optronics 0x106C (eDP-1)"
-    geometry:
-      x: 0
-      y: 0
-      width: 1366
-      height: 768
-  icons:
-    "/home/tyasheliy/Desktop/\u041C\u0430\u0448\u0430.desktop":
-      row: 3
-      col: 6
