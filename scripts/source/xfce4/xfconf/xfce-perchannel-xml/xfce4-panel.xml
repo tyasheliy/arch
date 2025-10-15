@@ -69,7 +69,7 @@
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="enable-mpris" type="bool" value="true"/>
       <property name="enable-wnck" type="bool" value="true"/>
-      <property name="known-players" type="string" value="firefox;firefox_firefox;io.bassi.Amberol;org.gnome.Rhythmbox3;org.strawberrymusicplayer.strawberry.desktop;parole;telegram-desktop_telegram-desktop;vlc"/>
+      <property name="known-players" type="string" value=";firefox;firefox_firefox;io.bassi.Amberol;org.gnome.Rhythmbox3;org.strawberrymusicplayer.strawberry.desktop;org.telegram.desktop;parole;telegram-desktop_telegram-desktop;vlc"/>
       <property name="mixer-command" type="string" value="pavucontrol"/>
       <property name="persistent-players" type="string" value="parole;org.gnome.Rhythmbox3"/>
       <property name="show-notifications" type="bool" value="true"/>

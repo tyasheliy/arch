@@ -45,11 +45,11 @@
       <property name="Active" type="bool" value="false"/>
       <property name="EDID" type="string" value="f1f2f1c54adf0c04dfaaa0dfd7f1df381f5c0c4f"/>
     </property>
-    <property name="HDMI-2" type="string" value="Samsung Electric Company 50&quot;">
+    <property name="HDMI-2" type="string" value="AOC International 24&quot;">
       <property name="Active" type="bool" value="true"/>
-      <property name="EDID" type="string" value="1211a0e2f86164a4c4e8a072ffd2140eff3425e4"/>
-      <property name="Resolution" type="string" value="3840x2160"/>
-      <property name="RefreshRate" type="double" value="30"/>
+      <property name="EDID" type="string" value="2ac9702c69099860316fbaf79f3511e05cf468fd"/>
+      <property name="Resolution" type="string" value="1920x1080"/>
+      <property name="RefreshRate" type="double" value="60"/>
       <property name="ModeFlags" type="uint64" value="5"/>
       <property name="Rotation" type="int" value="0"/>
       <property name="Reflection" type="string" value="0"/>

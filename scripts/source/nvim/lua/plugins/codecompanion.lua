@@ -11,7 +11,7 @@ return {
 		},
 		strategies = {
 			chat = {
-				adapter = "ollama_aiserver",
+				adapter = "ai_mediator",
 			},
 			inline = {
 				adapter = "ollama_aiserver",
@@ -22,6 +22,26 @@ return {
 		},
 		adapters = {
 			http = {
+				ai_mediator = function()
+					return require("codecompanion.adapters").extend("openai", {
+						name="ai_mediator",
+						env = {
+							api_key = vim.env.AIMEDIATOR_API_KEY,
+						},
+						url = "https://api.ai-mediator.ru/v1/chat/completions",
+						schema = {
+							model = {
+								default = "openai/gpt-oss-120b",
+							},
+							max_tokens = {
+								default = 8192,
+							},
+							temperature = {
+								default = 1,
+							},
+						},
+					})
+				end,
 				ollama_aiserver = function()
 					return require("codecompanion.adapters").extend("ollama", {
 						name = "ollama_aiserver",
