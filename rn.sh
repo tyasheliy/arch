@@ -9,6 +9,8 @@ execute () {
 	exit 0
 }
 
+export CALLER_DIR="$(pwd)"
+
 if [ $# -eq 0 ]; then
 	selected=$(ls $SCRIPT_DIR | grep .sh | fzf)
 

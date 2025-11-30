@@ -10,6 +10,7 @@
     <property name="known_applications" type="array">
       <value type="string" value="Bitrix24"/>
       <value type="string" value="blueman"/>
+      <value type="string" value="calibre"/>
       <value type="string" value="Firefox"/>
       <value type="string" value="io.snapcraft.SessionAgent"/>
       <value type="string" value="Mattermost"/>

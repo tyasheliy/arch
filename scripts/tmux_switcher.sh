@@ -14,14 +14,15 @@ fi
 
 selected_name=$(basename "$selected" | tr . _)
 
-# Если не внутри tmux
-if [[ -z $TMUX ]]; then
-    # Пытаемся присоединиться или создать сессию
-    tmux new -A -s "$selected_name" -c "$selected"
-else
-    # Если внутри tmux - создаем сессию если нужно и переключаемся
-    if ! tmux has-session -t="$selected_name" 2>/dev/null; then
-        tmux new-session -ds "$selected_name" -c "$selected"
-    fi
-    tmux switch-client -t "$selected_name"
-fi
+create_vanilla_tmux_session() {
+	if [[ -z $TMUX ]]; then
+		tmux new -A -s "$selected_name" -c "$selected"
+	else
+		if ! tmux has-session -t="$selected_name" 2>/dev/null; then
+			tmux new-session -ds "$selected_name" -c "$selected"
+		fi
+		tmux switch-client -t "$selected_name"
+	fi
+}
+
+(cd $selected && tmuxp load -y "$selected" > /dev/null 2>&1) || create_vanilla_tmux_session

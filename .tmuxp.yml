@@ -1,0 +1,17 @@
+session_name: os
+windows:
+- layout: c87e,146x37,0,0,1
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: nvim
+  start_directory: /home/tyasheliy/os
+  window_name: nvim
+- focus: 'true'
+  layout: c87f,146x37,0,0,2
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: clear
+  start_directory: /home/tyasheliy/os
+  window_name: clear

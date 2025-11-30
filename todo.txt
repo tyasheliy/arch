@@ -1,0 +1,2 @@
+offline nix install
+fix repo links in install scripts to match private repos state
